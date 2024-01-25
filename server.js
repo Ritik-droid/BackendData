@@ -15,15 +15,15 @@ app.use(cors());
 app.post(process.env.ENDPOINT, async (req, res) => {
   const { name, email, message } = req.body;
   var mailOptions = {
-    from: process.env.MAIL,
+    from: 'iritik358@gmail.com',
     to: [email],
-    subject: process.env.SUBJECT,
-    text: process.env.TEXT,
+    subject: "hello",
+    text: "hello",
   };
   var mailOptionsSender = {
-    from: process.env.MAIL,
-    to: [process.env.MYMAIL],
-    subject: process.env.SELFMAIL,
+    from: 'iritik358@gmail.com',
+    to: 'iritik071@gmail.com',
+    subject: 'USER CONTACTED',
     name : name,
     text: message
   };
@@ -31,12 +31,12 @@ app.post(process.env.ENDPOINT, async (req, res) => {
     const userData = await dbSchema.create({ name, email, message });
     console.log(userData);
     var transporter = nodemailer.createTransport({
-      host: process.env.HOST,
-      port: process.env.NODEMAILERPORT,
+      host:'smtp.gmail.com' ,
+      port: 587,
       secure: false,
       auth: {
-        user: process.env.MAIL,
-        pass: process.env.PASSWORD,
+        user: 'iritik358@gmail.com',
+        pass: 'xjke rvva nskk howu',
       },
     });
     transporter.sendMail(mailOptions, function (error, info) {
