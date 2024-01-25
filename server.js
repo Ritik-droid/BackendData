@@ -17,8 +17,22 @@ app.post(process.env.ENDPOINT, async (req, res) => {
   var mailOptions = {
     from: 'iritik358@gmail.com',
     to: [email],
-    subject: "hello",
-    text: "hello",
+    subject: "Hey, Thank you for your response",
+    text: `Dear ${name}
+
+    I hope this email finds you well. I wanted to take a moment to express my sincere gratitude for taking the time to visit me. Your interest and engagement mean a great deal to me.
+    
+    Your visit signifies not just a click, but a connection between us, and we value that immensely.
+    
+    If you have any feedback, questions, or suggestions based on your visit, please don't hesitate to reach out. I'm always eager to hear from  visitors.
+    
+    Once again, thank you for stopping by. I look forward to the opportunity to serve you further and hope to see you again soon.
+    
+    Warm regards,
+    
+    Ritik Ingle
+    Web Developer/Software Engineer
+    7498541851`
   };
   var mailOptionsSender = {
     from: 'iritik358@gmail.com',
