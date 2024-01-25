@@ -19,14 +19,13 @@ app.post(process.env.ENDPOINT, async (req, res) => {
     to: [email],
     subject: "Hey, Thank you for your response",
     text: `Dear ${name}
-
-    I hope this email finds you well. I wanted to take a moment to express my sincere gratitude for taking the time to visit me. Your interest and engagement mean a great deal to me.
-    
-    Your visit signifies not just a click, but a connection between us, and we value that immensely.
-    
-    If you have any feedback, questions, or suggestions based on your visit, please don't hesitate to reach out. I'm always eager to hear from  visitors.
-    
-    Once again, thank you for stopping by. I look forward to the opportunity to serve you further and hope to see you again soon.
+    I hope this email finds you well. I wanted to take a moment to express my sincere gratitude for taking the time to visit me.
+    Your interest and engagement mean a great deal to me.
+    Your visit signifies not just a click, but a connection between us, and I value that immensely. 
+    If you have any feedback, questions, or suggestions based on your visit, please don't hesitate to reach out. 
+    I'm always eager to hear from  visitors.
+    Once again, thank you for stopping by. 
+    I look forward to the opportunity to serve you further and hope to see you again soon.
     
     Warm regards,
     
@@ -38,14 +37,14 @@ app.post(process.env.ENDPOINT, async (req, res) => {
     from: 'iritik358@gmail.com',
     to: 'iritik071@gmail.com',
     subject: 'USER CONTACTED',
-    name : name,
+    name: name,
     text: message
   };
   try {
     const userData = await dbSchema.create({ name, email, message });
     console.log(userData);
     var transporter = nodemailer.createTransport({
-      host:'smtp.gmail.com' ,
+      host: 'smtp.gmail.com',
       port: 587,
       secure: false,
       auth: {
@@ -73,7 +72,7 @@ app.post(process.env.ENDPOINT, async (req, res) => {
   }
 });
 
-app.get("/", async (req,res)=>{
+app.get("/", async (req, res) => {
   await res.send("Hello this is get request")
 })
 
