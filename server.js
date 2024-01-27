@@ -73,7 +73,7 @@ app.post(process.env.ENDPOINT, async (req, res) => {
 });
 
 app.get("/", async (req, res) => {
-  await res.send("Hello this is get request")
+  await res.send("Hello this is Ritik's URL")
 })
 
 mongoose.connect(db).then(
