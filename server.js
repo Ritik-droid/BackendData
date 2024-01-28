@@ -73,6 +73,7 @@ app.post(process.env.ENDPOINT, async (req, res) => {
 });
 
 app.get("/", async (req, res) => {
+   // await dbSchema.deleteMany({})
   await res.send("Hello this is Ritik's URL")
 })
 
